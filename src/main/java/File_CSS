@@ -1,0 +1,93 @@
+#info {
+	position: fixed;
+	right: 1px;
+	bottom: 1px;
+	z-index: 1;
+	font-size: 125%;
+	background: white;
+	border: 4px double red;
+	min-width: 1570px;
+	max-width: 1570px;
+	min-height: 230px;
+	max-height: 230px;
+	padding: 10px;
+	overflow-y: scroll;
+	overflow-x: scroll;
+}
+
+#button {
+	position: fixed;
+	right: 0px;
+	bottom: 270px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#button2 {
+	position: fixed;
+	right: 0px;
+	bottom: 320px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#button3 {
+	position: fixed;
+	right: 0px;
+	bottom: 370px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#button4 {
+	position: fixed;
+	right: 0px;
+	bottom: 420px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#button5 {
+	position: fixed;
+	right: 0px;
+	bottom: 470px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#button6 {
+	position: fixed;
+	right: 310px;
+	bottom: 370px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#button7 {
+	position: fixed;
+	right: 210px;
+	bottom: 270px;
+	background-color: #6f00ff;
+	color: white;
+	padding: 10px 40px;
+	text-align: center;
+	font-size: 16px;
+}

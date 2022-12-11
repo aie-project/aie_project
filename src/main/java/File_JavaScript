@@ -1,0 +1,135 @@
+//--------------------------------------------
+var textBox = document.createElement('div');
+textBox.id = 'info';
+var page = document.querySelector('body');
+page.appendChild(textBox);
+
+//--------------------------------------------
+
+$("<input type='button' id='button' value='Потенциал СТАРТ' />").appendTo("body");
+button.onclick = Start1;
+
+function Start1() {
+	setInterval(Calculation1, 1)
+}
+
+async function Calculation1() {
+	var open1 = document.getElementsByClassName('default-label-box')[2].textContent;
+	var max1 = document.getElementsByClassName('default-label-box')[4].textContent;
+	var potential1 = (max1-open1)/open1*100;
+	button7.value = potential1.toFixed(2);
+}
+
+//--------------------------------------------
+
+$("<input type='button' id='button2' value='Потенциал и изменение СТАРТ' />").appendTo("body");
+button2.onclick = Start2;
+
+function Start2() {
+	start = 1;
+	setInterval(Calculation2, 1)
+}
+
+var i = 0;
+var open = 0;
+var openNew = 0;
+var max = 0;
+var close = 0;
+var potential = 0;
+var change = 0;
+var potentialMas = [];
+var changeMas = [];
+var start = 0;
+
+async function Calculation2() {
+	if (start == 1) {
+		open = document.getElementsByClassName('default-label-box')[2].textContent;
+		max = document.getElementsByClassName('default-label-box')[4].textContent;
+		close = document.getElementsByClassName('default-label-box')[8].textContent;
+		potential = ((max-open)/open*100).toFixed(2);
+		change = ((close-open)/open*100).toFixed(2);
+		button6.value = i;
+		if (openNew != open) {
+			openNew = open;
+			potentialMas[i] = potential;
+			changeMas[i] = change;
+			i++;
+		}
+	}
+}
+
+//--------------------------------------------
+
+$("<input type='button' id='button3' value='Потенциал и изменение СТОП' />").appendTo("body");
+button3.onclick = Stop;
+
+function Stop() {
+	start = 0;
+}
+
+//--------------------------------------------
+
+$("<input type='button' id='button4' value='Вывод' />").appendTo("body");
+button4.onclick = Out;
+
+function Out() {
+	info.innerHTML += '<br>';
+	Ticker = document.getElementsByTagName("h1")[0].textContent;
+	Ticker = Ticker.replace("/", "_");
+	info.innerHTML += 'String Ticker = "' + Ticker + '";';
+	var n1 = 1;
+	var n2 = 1;
+	info.innerHTML += '<br>';
+	info.innerHTML += 'double[] PotentialMasForAnalysis = { ';
+	while (n1 < potentialMas.length-1) {
+		info.innerHTML += potentialMas[n1];
+		n1++;
+		if (n1 < potentialMas.length-1) {
+			info.innerHTML += ', ';
+		}
+	}
+	info.innerHTML += ' };';
+	info.innerHTML += '<br>';
+	info.innerHTML += 'double[] ChangeMasForAnalysis = { ';
+	while (n2 < changeMas.length-1) {
+		info.innerHTML += changeMas[n2];
+		n2++;
+		if (n2 < changeMas.length-1) {
+			info.innerHTML += ', ';
+		}
+	}
+	info.innerHTML += ' };';
+	info.innerHTML += '<br>' + '<br>';
+}
+
+//--------------------------------------------
+
+$("<input type='button' id='button5' value='Обнуление' />").appendTo("body");
+button5.onclick = Zeroing;
+
+function Zeroing() {
+	n1 = 0;
+	n2 = 0;
+	i = 0;
+	open = 0;
+	openNew = 0;
+	max = 0;
+	close = 0;
+	potential = 0;
+	change = 0;
+	potentialMas = [];
+	changeMas = [];
+	start = 0;
+	button6.value = '0';
+	textBox.innerHTML = '';
+}
+
+//--------------------------------------------
+
+$("<input type='button' id='button6' value='0' />").appendTo("body");
+
+//--------------------------------------------
+
+$("<input type='button' id='button7' value='0' />").appendTo("body");
+
+//--------------------------------------------
